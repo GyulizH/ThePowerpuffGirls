@@ -19,6 +19,17 @@
     font-size: 15px;
   }
 
+  button{
+    width: 20%;
+    height: 40px;
+    font-size: 18px;
+    cursor:pointer;
+
+    &:hover {
+      background-color: red;
+    }
+  }
+
 }
 }
 

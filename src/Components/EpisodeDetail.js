@@ -1,5 +1,6 @@
 import React from "react";
 import './episodedetails.scss'
+import {Link} from "react-router-dom";
 
 
 class  EpisodeDetail extends React.Component{
@@ -36,6 +37,9 @@ class  EpisodeDetail extends React.Component{
                        dangerouslySetInnerHTML={this.createMarkup()}
                     >
                     </p>
+                    <Link to="/tvShowDetails">
+                        <button>BACK</button>
+                    </Link>
                 </div>
             </div>
         );
