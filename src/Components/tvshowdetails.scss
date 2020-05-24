@@ -1,0 +1,42 @@
+.TvShow{
+display: flex;
+flex-direction: column;
+
+}
+
+.TvShow__details {
+  display: flex;
+  flex-direction: row;
+  &--image{
+
+  }
+
+  &--content{
+    width: 50%;
+    margin-left: 20px;
+    &-title{
+      font-family: "Helvetica Neue";
+      font-size: 20px;
+    }
+
+    &-text{
+      font-family: "Helvetica Neue";
+      font-size: 15px;
+    }
+  }
+}
+
+.TvShow__EpisodeList{
+  margin-top: 20px;
+  button {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    cursor:pointer;
+
+    &:hover {
+      background-color: #757474;
+    }
+
+  }
+}

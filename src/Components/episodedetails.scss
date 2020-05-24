@@ -1,0 +1,24 @@
+.Episode{
+  display: flex;
+  flex-direction: row;
+
+&--image{
+
+}
+
+&--content{
+  width: 50%;
+  margin-left: 20px;
+  &-title{
+     font-family: "Helvetica Neue";
+     font-size: 20px;
+  }
+
+  &-text{
+    font-family: "Helvetica Neue";
+    font-size: 15px;
+  }
+
+}
+}
+
