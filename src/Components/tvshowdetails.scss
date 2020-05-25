@@ -1,3 +1,11 @@
+@mixin breakpoint($device) {
+  @if $device == xs {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
 .TvShow{
 display: flex;
 flex-direction: column;
@@ -39,4 +47,23 @@ flex-direction: column;
     }
 
   }
+  p {
+    font-family: "Helvetica Neue";
+    font-size: 30px;
+  }
 }
+
+@include breakpoint(xs){
+  .TvShow {
+    .TvShow__details,
+    .TvShow__EpisodeList{
+      with:100%;
+      background-color: beige;
+    }
+  }
+  .TvShow__EpisodeList button{
+    font-size: 13px;
+  }
+}
+
+

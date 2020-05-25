@@ -8,26 +8,25 @@ class  EpisodeDetail extends React.Component{
         super(props);
 
         this.state = {
-            episode: {}
+            episode: {},
+            apiResponded:false
         }
     }
     componentDidMount() {
         const handle = this.props.match.params
-        console.log("handle", handle.episodeId)
-         fetch('http://api.tvmaze.com/episodes/657308')
+         fetch(`http://api.tvmaze.com/episodes/${handle.episodeId}`)
              .then(response => response.json())
-             .then(data => this.setState( { episode : data}))
+             .then(data =>  this.setState( { episode : data , apiResponded : true}))
      }
 
     createMarkup() {
         return {__html: this.state.episode.summary}; };
 
     render() {
-        console.log(this.state.episode)
-        return (
+        return this.state.apiResponded ? (
             <div className="Episode">
                 <div className="Episode--image">
-                    <img src="http://static.tvmaze.com/uploads/images/medium_landscape/53/132617.jpg"/>
+                    <img src={this.state.episode.image.medium} alt="pic"/>
                 </div>
                 <div className="Episode--content">
                     <p className="Episode--content-title">
@@ -37,12 +36,12 @@ class  EpisodeDetail extends React.Component{
                        dangerouslySetInnerHTML={this.createMarkup()}
                     >
                     </p>
-                    <Link to="/tvShowDetails">
+                    <Link to="/">
                         <button>BACK</button>
                     </Link>
                 </div>
             </div>
-        );
+        ) : null
     }
 }
 
